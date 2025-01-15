@@ -42,11 +42,11 @@ export default async function RootLayout({ children, params }: { children: React
       </head>
       <body>
         <Providers messages={messages}>
-          <AdminBar
+          {/* <AdminBar
             adminBarProps={{
               preview: isEnabled,
             }}
-          />
+          /> */}
 
           <Header />
           {children}

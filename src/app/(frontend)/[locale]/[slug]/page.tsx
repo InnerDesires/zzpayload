@@ -46,16 +46,20 @@ type Args = {
 }
 
 export default async function Page({ params: paramsPromise }: Args) {
-  const { isEnabled: draft } = await draftMode()
+  const { isEnabled: draft } = await draftMode();
+  
+  // Important as the page with slug 'home' will be rendered on the root page
   const { slug = 'home' } = await paramsPromise
+
+
   const url = '/' + slug
 
   let page: PageType | null
-
+  console.log('slug', slug)
   page = await queryPageBySlug({
     slug,
   })
-
+  console.log(page)
   // Remove this code once your website is seeded
   if (!page && slug === 'home') {
     page = homeStatic

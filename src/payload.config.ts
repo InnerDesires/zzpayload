@@ -80,7 +80,6 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   i18n: {
-   fallbackLanguage: 'uk',
    supportedLanguages: { en, uk}
   },
   localization,
