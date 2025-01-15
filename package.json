@@ -19,6 +19,7 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "latest",
     "@payloadcms/live-preview-react": "latest",
     "@payloadcms/next": "latest",
     "@payloadcms/payload-cloud": "latest",
@@ -35,11 +36,11 @@
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-   
     "geist": "^1.3.0",
     "graphql": "^16.8.2",
     "lucide-react": "^0.378.0",
     "next": "^15.1.0",
+    "next-intl": "^3.26.3",
     "next-sitemap": "^4.2.3",
     "payload": "latest",
     "payload-admin-bar": "^1.0.6",
@@ -49,8 +50,7 @@
     "react-hook-form": "7.45.4",
     "sharp": "0.32.6",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7",
-    "@payloadcms/db-postgres": "latest"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
