@@ -5,6 +5,8 @@ import sharp from 'sharp' // sharp-import
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
+import { en } from '@payloadcms/translations/languages/en'
+import { uk } from '@payloadcms/translations/languages/uk'
 
 import { Categories } from './collections/Categories'
 import { Media } from './collections/Media'
@@ -16,6 +18,7 @@ import { Header } from './Header/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
+import localization from './i18n/locatization'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -76,6 +79,11 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
+  i18n: {
+   fallbackLanguage: 'uk',
+   supportedLanguages: { en, uk}
+  },
+  localization,
   jobs: {
     access: {
       run: ({ req }: { req: PayloadRequest }): boolean => {

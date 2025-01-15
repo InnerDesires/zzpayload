@@ -1,12 +1,12 @@
 const localization = {
     locales: [{
-        code: 'en-US',
+        code: 'en',
         label: 'English'
     }, {
-        code: 'uk-UA',
+        code: 'uk',
         label: 'Ukrainian (Українська)'
     }],
-    defaultLocale: 'en-US'
+    defaultLocale: 'uk'
 }
 
 export default localization;
