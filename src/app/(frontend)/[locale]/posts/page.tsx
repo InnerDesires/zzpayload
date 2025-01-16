@@ -11,7 +11,7 @@ import PageClient from './page.client'
 export const dynamic = 'force-static'
 export const revalidate = 600
 
-export default async function Page({ params}: { params: { locale: string } }) {
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const payload = await getPayload({ config: configPromise })
   const { locale } = await params;
   
