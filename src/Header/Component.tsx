@@ -7,7 +7,7 @@ import type { Header } from '@/payload-types'
 
 
 export async function Header(params: any) {
-  const locale = await getLocale();
+  const { locale } = await params;
   const headerData: Header = await getGlobal('header', locale as 'en' | 'uk', 1);
   return <HeaderClient data={headerData} />
 }

@@ -7,10 +7,10 @@ import type { Footer } from '@/payload-types'
 import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
 import { CMSLink } from '@/components/Link'
 import { Logo } from '@/components/Logo/Logo'
-import { getLocale } from 'next-intl/server'
+import { TypedLocale } from 'payload'
 
-export async function Footer() {
-  const locale = await getLocale();
+export async function Footer({ locale }: { locale: TypedLocale }) {
+  
   const footerData: Footer = await getGlobal('footer', locale as 'en' | 'uk', 1);
 
   const navItems = footerData?.navItems || []

@@ -19,6 +19,7 @@ import localization from '@/i18n/locatization'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
+import { TypedLocale } from 'payload'
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode, params: Promise<{ locale: string }> }) {
   const { isEnabled } = await draftMode()
@@ -48,9 +49,9 @@ export default async function RootLayout({ children, params }: { children: React
             }}
           /> */}
 
-          <Header />
+          <Header locale={locale as TypedLocale} />
           {children}
-          <Footer />
+          <Footer locale={locale as TypedLocale} />
         </Providers>
       </body>
     </html>
