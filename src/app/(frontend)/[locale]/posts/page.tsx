@@ -13,7 +13,7 @@ export const revalidate = 600
 
 export default async function Page({ params}: { params: { locale: string } }) {
   const payload = await getPayload({ config: configPromise })
-  const { locale } = params;
+  const { locale } = await params;
   
   // Ensure locale is strictly typed
   const payloadLocale = locale === 'en' ? 'en' : 'uk'
