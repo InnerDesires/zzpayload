@@ -13,6 +13,7 @@ export const Banner: Block = {
       name: 'style',
       type: 'select',
       defaultValue: 'info',
+      localized: true,
       options: [
         { label: 'Info', value: 'info' },
         { label: 'Warning', value: 'warning' },

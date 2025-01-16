@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
-import { getPayload } from 'payload'
+import { getPayload, TypedLocale } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import { homeStatic } from '@/endpoints/seed/home-static'
@@ -42,6 +42,7 @@ export async function generateStaticParams() {
 type Args = {
   params: Promise<{
     slug?: string
+    locale: TypedLocale
   }>
 }
 
@@ -49,17 +50,15 @@ export default async function Page({ params: paramsPromise }: Args) {
   const { isEnabled: draft } = await draftMode();
   
   // Important as the page with slug 'home' will be rendered on the root page
-  const { slug = 'home' } = await paramsPromise
+  const { slug = 'home', locale = 'uk' } = await paramsPromise
 
 
   const url = '/' + slug
 
   let page: PageType | null
-  console.log('slug', slug)
   page = await queryPageBySlug({
     slug,
   })
-  console.log(page)
   // Remove this code once your website is seeded
   if (!page && slug === 'home') {
     page = homeStatic
@@ -80,7 +79,7 @@ export default async function Page({ params: paramsPromise }: Args) {
       {draft && <LivePreviewListener />}
 
       <RenderHero {...hero} />
-      <RenderBlocks blocks={layout} />
+      <RenderBlocks blocks={layout} locale={locale} />
     </article>
   )
 }

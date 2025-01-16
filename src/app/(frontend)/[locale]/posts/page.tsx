@@ -7,14 +7,13 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 import PageClient from './page.client'
-import { getLocale } from 'next-intl/server'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
 
 export default async function Page({ params}: { params: { locale: string } }) {
   const payload = await getPayload({ config: configPromise })
-  const { locale } = await params;
+  const { locale } = params;
   
   // Ensure locale is strictly typed
   const payloadLocale = locale === 'en' ? 'en' : 'uk'
