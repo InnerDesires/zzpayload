@@ -49,7 +49,7 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
 
     src = `${getClientSideURL()}${url}`
   }
-  console.log(src);
+
   const loading = loadingFromProps || (!priority ? 'lazy' : undefined)
 
   // NOTE: this is used by the browser to determine which image to download at different screen sizes
@@ -58,7 +58,7 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     : Object.entries(breakpoints)
         .map(([, value]) => `(max-width: ${value}px) ${value * 2}w`)
         .join(', ')
-  
+
   return (
     <picture>
       <NextImage
