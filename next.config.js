@@ -12,7 +12,7 @@ console.warn('using following url for remote patterns: ', NEXT_PUBLIC_SERVER_URL
 const nextConfig = {
   images: {
     remotePatterns: [
-      ...[NEXT_PUBLIC_SERVER_URL /* 'https://example.com' */].map((item) => {
+      ...[NEXT_PUBLIC_SERVER_URL, `https://${process.env.VERCEL_URL}`/* 'https://example.com' */].map((item) => {
         const url = new URL(item)
 
         return {
