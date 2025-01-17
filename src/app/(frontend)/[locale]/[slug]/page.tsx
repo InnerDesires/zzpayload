@@ -29,9 +29,6 @@ export async function generateStaticParams() {
   })
 
   const params = pages.docs
-    ?.filter((doc) => {
-      return doc.slug !== 'home'
-    })
     .map(({ slug }) => {
       return { slug }
     })
@@ -59,6 +56,8 @@ export default async function Page({ params: paramsPromise }: Args) {
     slug,
     locale
   })
+
+ console.log(slug, page);
 
   if (!page) {
     return <PayloadRedirects url={url} />

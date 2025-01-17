@@ -8,8 +8,7 @@ const getPagesSitemap = unstable_cache(
     const payload = await getPayload({ config })
     const SITE_URL =
       process.env.NEXT_PUBLIC_SERVER_URL ||
-      process.env.VERCEL_PROJECT_PRODUCTION_URL ||
-      'https://example.com'
+      process.env.VERCEL_URL 
 
     const results = await payload.find({
       collection: 'pages',
