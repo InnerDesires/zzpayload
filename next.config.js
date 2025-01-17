@@ -8,7 +8,6 @@ const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   : undefined || process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
 /** @type {import('next').NextConfig} */
-console.warn('using following url for remote patterns: ', NEXT_PUBLIC_SERVER_URL, `https://${process.env.VERCEL_URL}`);
 const nextConfig = {
   images: {
     remotePatterns: [
