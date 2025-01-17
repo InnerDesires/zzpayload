@@ -55,15 +55,10 @@ export default async function Page({ params: paramsPromise }: Args) {
 
   const url = '/' + slug
 
-  let page: PageType | null
-  page = await queryPageBySlug({
+  const page = await queryPageBySlug({
     slug,
     locale
   })
-  // Remove this code once your website is seeded
-  if (!page && slug === 'home') {
-    page = homeStatic
-  }
 
   if (!page) {
     return <PayloadRedirects url={url} />
