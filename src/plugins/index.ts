@@ -2,6 +2,7 @@ import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import { searchPlugin } from '@payloadcms/plugin-search'
 import { Plugin } from 'payload'
@@ -91,4 +92,11 @@ export const plugins: Plugin[] = [
     },
   }),
   payloadCloudPlugin(),
+  vercelBlobStorage( {
+    enabled: true,
+    collections:  {
+      media: true,
+    },
+    token: process.env.BLOB_READ_WRITE_TOKEN,
+  })
 ]
