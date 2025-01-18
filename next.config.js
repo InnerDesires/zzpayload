@@ -18,16 +18,7 @@ const nextConfig = {
           hostname: url.hostname,
           protocol: url.protocol.replace(':', ''),
         }
-      }
-      ),
-      {
-        hostname: 'zzpayload.vercel.app',
-        protocol: 'https',
-      },
-      {
-        hostname: 'zzpayload-git-dev-innerdesires-projects.vercel.app/',
-        protocol: 'https',
-      },
+      }),
     ],
   },
   reactStrictMode: true,
