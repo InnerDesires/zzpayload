@@ -7,6 +7,7 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 import PageClient from './page.client'
+import { getTranslations } from 'next-intl/server'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -14,7 +15,7 @@ export const revalidate = 600
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const payload = await getPayload({ config: configPromise })
   const { locale } = await params;
-  
+  const t = await getTranslations('Posts')
   // Ensure locale is strictly typed
   const payloadLocale = locale === 'en' ? 'en' : 'uk'
   
@@ -36,7 +37,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <PageClient />
       <div className="container mb-16">
         <div className="prose dark:prose-invert max-w-none">
-          <h1>Posts</h1>
+          <h1>{t('title')}</h1>
         </div>
       </div>
 

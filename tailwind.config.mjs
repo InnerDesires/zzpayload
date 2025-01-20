@@ -43,6 +43,7 @@ export default {
       },
     },
     extend: {
+
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
@@ -89,10 +90,10 @@ export default {
         success: 'hsl(var(--success))',
         error: 'hsl(var(--error))',
         warning: 'hsl(var(--warning))',
-      },
-      fontFamily: {
-        mono: ['var(--font-geist-mono)'],
-        sans: ['var(--font-geist-sans)'],
+      }, fontFamily: {
+        sans: [
+          'UZ Sans'
+        ]
       },
       keyframes: {
         'accordion-down': {
