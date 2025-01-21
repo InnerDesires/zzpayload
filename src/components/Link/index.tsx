@@ -50,14 +50,14 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
   const newTabProps = newTab ? { rel: 'noopener noreferrer', target: '_blank' } : {}
 
 
- /*  if (appearance === 'inline') {
+  if (appearance === 'inline') {
     return (
       <Link className={cn(className)} href={finalHref} {...newTabProps}>
         {label && label}
         {children && children}
       </Link>
     )
-  } */
+  }
 
   return (
     <Button asChild className={className} size={size} variant={appearance}>
