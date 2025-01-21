@@ -9,16 +9,6 @@ const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(woff|woff2|eot|ttf|otf)$/i,
-      type: 'asset/resource',
-      generator: {
-        filename: 'static/fonts/[hash][ext][query]'
-      }
-    })
-    return config
-  },
   images: {
     remotePatterns: [
       ...[NEXT_PUBLIC_SERVER_URL, `https://${process.env.VERCEL_URL}`, 'http://192.168.68.55'].map((item) => {
