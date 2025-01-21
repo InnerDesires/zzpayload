@@ -22,7 +22,7 @@ export default function RequestResetPassword() {
         } catch (err) {
             setMessage({
                 type: 'error',
-                text: err instanceof Error ? err.message : t('errors.generic')
+                text: err instanceof Error ? err.message : 'Password mismatch'
             });
         } finally {
             setIsLoading(false);

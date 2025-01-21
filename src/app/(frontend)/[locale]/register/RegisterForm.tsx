@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button"
 export default function RegisterForm() {
     const router = useRouter()
     const t = useTranslations('Register')
-    const { register, user } = { register: () => {}, user: null }
+    const { register, user } = { register: (email: any, password: any) => {}, user: null }
 
     const [formData, setFormData] = useState({
         email: '',

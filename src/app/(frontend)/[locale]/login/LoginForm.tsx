@@ -15,7 +15,7 @@ export default function Login() {
     const router = useRouter();
     const locale = useLocale();
     const t = useTranslations('Login');
-    const { login, user } = { login: () => {}, user: null}
+    const { login, user } = { login: (user: any, password: any) => {}, user: null}
 
     useEffect(() => {
         if (user) {

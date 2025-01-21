@@ -34,25 +34,18 @@ export default function ResetPasswordForm({ token }: ResetPasswordFormProps) {
         e.preventDefault();
         setError(null);
         setIsLoading(true);
+        console.log(formData)
 
         if (formData.password !== formData.confirmPassword) {
-            setError(t('errors.passwordMismatch'));
+           
             setIsLoading(false);
             return;
         }
 
         try {
-            await strapiAuth.resetPassword(
-                token,
-                formData.password,
-                formData.confirmPassword
-            );
-            setIsSuccess(true);
-            setTimeout(() => {
-                router.push('/login');
-            }, 3000);
+            
         } catch (err) {
-            setError(err instanceof Error ? err.message : t('errors.generic'));
+            setError(err instanceof Error ? err.message : 'Password mismatch');
         } finally {
             setIsLoading(false);
         }
