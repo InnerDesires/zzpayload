@@ -66,11 +66,8 @@
     "date-published": "Date Published",
     "author": "Author"
   },
-  "showing": "Showing",
-  "of": "of",
-  "search": "Search",
-  "dashboard": "Dashboard",
-  "previous": "Previous",
-  "next": "Next",
-  "more-pages": "More pages"
+  "Nav": {
+    "login": "Login",
+    "register": "Register"
+  }
 }

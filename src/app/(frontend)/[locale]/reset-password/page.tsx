@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from 'next-intl';
-
+import LoginPageClient from '@/app/(frontend)/[locale]/login/page.client'
 export default function RequestResetPassword() {
     const [email, setEmail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -31,6 +31,7 @@ export default function RequestResetPassword() {
 
     return (
         <Card className="w-full max-w-md mx-auto">
+            <LoginPageClient />
             <CardHeader>
                 <CardTitle className="text-3xl font-bold">{t('title')}</CardTitle>
                 <CardDescription>{t('description')}</CardDescription>
