@@ -101,3 +101,26 @@ html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
 }
+
+
+@font-face {
+  font-family: 'UZ Sans';
+  src: url('/fonts/UZSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UZ Sans';
+  src: url('/fonts/UZSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UZ Sans';
+  src: url('/fonts/UZSans-Bold.ttf') format('truetype');
+  font-weight: 700; 
+  font-style: normal;
+}
+
