@@ -23,15 +23,15 @@ import localFont from 'next/font/local'
 const UzSans = localFont({
   src: [
     {
-      path: './fonts/UzSans-Regular.ttf',
+      path: '/fonts/UzSans-Regular.ttf',
       weight: '400',
     },
     {
-      path: './fonts/UzSans-Bold.ttf',
+      path: '/fonts/UzSans-Bold.ttf',
       weight: '700',
     },
     {
-      path: './fonts/UzSans-SemiBold.ttf',
+      path: '/fonts/UzSans-SemiBold.ttf',
       weight: '600',
     }
   ],
