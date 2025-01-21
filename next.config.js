@@ -9,9 +9,6 @@ const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  outputFileTracingIncludes: {
-    './src/app/(frontend)/[locale]/layout.tsx': ['./public/fonts/**/*']
-  },
   images: {
     remotePatterns: [
       ...[NEXT_PUBLIC_SERVER_URL, `https://${process.env.VERCEL_URL}`, 'http://192.168.68.55'].map((item) => {

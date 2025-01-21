@@ -103,7 +103,7 @@ html[data-theme='light'] {
 }
 
 
-/* @font-face {
+@font-face {
   font-family: 'UZ Sans';
   src: url('/fonts/UZSans-Regular.ttf') format('truetype');
   font-weight: 400;
@@ -124,4 +124,3 @@ html[data-theme='light'] {
   font-style: normal;
 }
 
- */

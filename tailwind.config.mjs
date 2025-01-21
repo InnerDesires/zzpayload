@@ -95,9 +95,9 @@ const config = {
         warning: 'hsl(var(--warning))',
       },
       fontFamily: {
-        uzSansRegular: 'var(--font-uz-sans-regular)',
-        uzSansSemiBold: 'var(--font-uz-sans-semi-bold)',
-        uzSansBold: 'var(--font-uz-sans-bold)',
+        sans: [
+          'UZ Sans'
+        ]
       },
       keyframes: {
         'accordion-down': {

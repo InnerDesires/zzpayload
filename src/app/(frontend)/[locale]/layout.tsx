@@ -18,26 +18,8 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { TypedLocale } from 'payload'
 
-import localFont from 'next/font/local'
 
-const UzSans = localFont({
-  src: [
-    {
-      path: './public/fonts/UzSans-Regular.ttf',
-      weight: '400',
-    },
-    {
-      path: './public/fonts/UzSans-Bold.ttf',
-      weight: '700',
-    },
-    {
-      path: './public/fonts/UzSans-SemiBold.ttf',
-      weight: '600',
-    }
-  ],
-  display: 'swap',
-  variable: '--font-uz-sans'
-})
+
 
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode, params: Promise<{ locale: string }> }) {
@@ -54,7 +36,7 @@ export default async function RootLayout({ children, params }: { children: React
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning className={UzSans.className}>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
