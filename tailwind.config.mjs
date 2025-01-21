@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+import tailwindAnimate from 'tailwindcss-animate'
+import tailwindTypography from '@tailwindcss/typography'
+
+const config = {
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -7,7 +10,7 @@ export default {
     './src/**/*.{ts,tsx}',
   ],
   darkMode: ['selector', '[data-theme="dark"]'],
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+  plugins: [tailwindAnimate, tailwindTypography],
   prefix: '',
   safelist: [
     'lg:col-span-4',
@@ -90,10 +93,11 @@ export default {
         success: 'hsl(var(--success))',
         error: 'hsl(var(--error))',
         warning: 'hsl(var(--warning))',
-      }, fontFamily: {
-        sans: [
-          'UZ Sans'
-        ]
+      },
+      fontFamily: {
+        uzSansRegular: 'var(--font-uz-sans-regular)',
+        uzSansSemiBold: 'var(--font-uz-sans-semi-bold)',
+        uzSansBold: 'var(--font-uz-sans-bold)',
       },
       keyframes: {
         'accordion-down': {
@@ -147,3 +151,5 @@ export default {
     },
   },
 }
+
+export default config

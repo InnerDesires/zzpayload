@@ -49,7 +49,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           totalDocs={posts.totalDocs}
         />
       </div>
-
       <CollectionArchive posts={posts.docs} />
 
       <div className="container">
