@@ -23,18 +23,19 @@ import localFont from 'next/font/local'
 const UzSans = localFont({
   src: [
     {
-      path: '/fonts/UzSans-Regular.ttf',
+      path: './public/fonts/UzSans-Regular.ttf',
       weight: '400',
     },
     {
-      path: '/fonts/UzSans-Bold.ttf',
+      path: './public/fonts/UzSans-Bold.ttf',
       weight: '700',
     },
     {
-      path: '/fonts/UzSans-SemiBold.ttf',
+      path: './public/fonts/UzSans-SemiBold.ttf',
       weight: '600',
     }
   ],
+  display: 'swap',
   variable: '--font-uz-sans'
 })
 
