@@ -20,20 +20,21 @@ import { TypedLocale } from 'payload'
 
 import localFont from 'next/font/local'
 
-const UzSans = localFont({ src: [
-  {
-    path: '../../../fonts/UzSans-Regular.ttf',
-    weight: '400',
-  },
-  {
-    path: '../../../fonts/UzSans-Bold.ttf',
-    weight: '700',
-  },
-  {
-    path: '../../../fonts/UzSans-SemiBold.ttf',
-    weight: '600',
-  }
-],
+const UzSans = localFont({
+  src: [
+    {
+      path: '../../../../public/fonts/UzSans-Regular.ttf',
+      weight: '400',
+    },
+    {
+      path: '../../../../public/fonts/UzSans-Bold.ttf',
+      weight: '700',
+    },
+    {
+      path: '../../../../public/fonts/UzSans-SemiBold.ttf',
+      weight: '600',
+    }
+  ],
   variable: '--font-uz-sans'
 })
 
