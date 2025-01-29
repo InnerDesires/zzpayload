@@ -104,8 +104,9 @@ export const Posts: CollectionConfig<'posts'> = {
                   ]
                 },
               }),
-              label: false,
+              label: 'Text',
               required: true,
+              localized: true,
             },
           ],
           label: 'Content',

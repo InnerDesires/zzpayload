@@ -15,14 +15,14 @@ import { Languages } from "lucide-react"
 import { useLocale } from 'next-intl';
 
 const locales: Record<string, { label: string; flag: string }> = {
+    'uk': {
+        label: 'Українська',
+        flag: '🇺🇦'
+    },
     'en': {
         label: 'English',
         flag: '🇬🇧'
     },
-    'uk': {
-        label: 'Українська',
-        flag: '🇺🇦'
-    }
 };
 
 export default function LanguageSwitcher() {

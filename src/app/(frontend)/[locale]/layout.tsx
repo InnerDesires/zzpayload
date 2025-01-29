@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
 
-import { cn } from '@/utilities/ui'
-import { GeistMono } from 'geist/font/mono'
-import { GeistSans } from 'geist/font/sans'
 import React from 'react'
 
 import { AdminBar } from '@/components/AdminBar'
@@ -12,14 +9,18 @@ import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
-
 import './globals.css'
+
 import { getServerSideURL } from '@/utilities/getURL'
 import localization from '@/i18n/locatization'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { TypedLocale } from 'payload'
+
+
+
+
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode, params: Promise<{ locale: string }> }) {
   const { isEnabled } = await draftMode()
@@ -35,7 +36,7 @@ export default async function RootLayout({ children, params }: { children: React
   const messages = await getMessages()
 
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
@@ -50,7 +51,7 @@ export default async function RootLayout({ children, params }: { children: React
           /> */}
 
           <Header locale={locale as TypedLocale} />
-          {children}
+            {children}
           <Footer locale={locale as TypedLocale} />
         </Providers>
       </body>

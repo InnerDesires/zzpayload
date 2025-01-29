@@ -105,4 +105,4 @@ const queryPostBySlug = cache(async ({ slug, locale }: { slug: string, locale: '
   })
 
   return result.docs?.[0] || null
-})
+});

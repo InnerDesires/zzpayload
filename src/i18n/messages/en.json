@@ -1,16 +1,73 @@
 {
+  "Login": {
+    "title": "Sign In",
+    "description": "Welcome to the Iron Squad learning and interaction platform",
+    "continueWith": "Continue with {provider}",
+    "orContinueWith": "Or continue with email",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "resetPassword": "Reset password",
+    "submit": "Sign In",
+    "registerWithEmail": "Register with email and password"
+  },
+  "Register": {
+    "title": "Register",
+    "description": "Create an account to access the Iron Squad platform",
+    "continueWith": "Continue with {provider}",
+    "orRegisterWith": "Or register with email",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Register",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign In",
+    "errors": {
+      "passwordMismatch": "Passwords do not match",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
+  "ResetPassword": {
+    "title": "Set New Password",
+    "description": "Please enter your new password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Save New Password",
+    "success": "Password successfully changed! You will be redirected to the login page.",
+    "backToLogin": "Back to Login",
+    "errors": {
+      "passwordMismatch": "Passwords do not match",
+      "generic": "Something went wrong. Please try again.",
+      "invalidToken": "Invalid or expired password reset link"
+    }
+  },
+  "RequestReset": {
+    "title": "Reset Password",
+    "description": "Enter your email address and we will send you instructions to reset your password",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "submit": "Reset Password",
+    "successMessage": "If this email exists in our system, you will receive password reset instructions.",
+    "noEmail": "Haven't received the email? Check your spam folder or",
+    "tryAgain": "try again",
+    "rememberPassword": "Remember your password?",
+    "signIn": "Sign In"
+  },
   "date-published": "Date Published",
   "author": "Author",
   "page-not-found": "This page could not be found.",
   "go-home": "Go home",
   "loading": "Loading, please wait...",
-  "posts": "Posts",
-  "post": "Post",
-  "showing": "Showing",
-  "of": "of",
-  "search": "Search",
-  "dashboard": "Dashboard",
-  "previous": "Previous",
-  "next": "Next",
-  "more-pages": "More pages"
+  "Posts": {
+    "title": "Posts",
+    "metadata": "Payload Website Template Posts"
+  },
+  "PostHero": {
+    "date-published": "Date Published",
+    "author": "Author"
+  },
+  "Nav": {
+    "login": "Login",
+    "register": "Register"
+  }
 }
