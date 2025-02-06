@@ -9,7 +9,9 @@
     "forgotPassword": "Забули пароль?",
     "resetPassword": "Скинути пароль",
     "submit": "Авторизуватися",
-    "registerWithEmail": "Реєстрація через email та пароль"
+    "registerWithEmail": "Реєстрація через email та пароль",
+    "error_password_too_short": "Пароль має бути не менше 8 символів",
+    "error_invalid_email": "Недійсна електронна адреса"
   },
   "Register": {
     "title": "Реєстрація",

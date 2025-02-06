@@ -9,7 +9,9 @@
     "forgotPassword": "Forgot password?",
     "resetPassword": "Reset password",
     "submit": "Sign In",
-    "registerWithEmail": "Register with email and password"
+    "registerWithEmail": "Register with email and password",
+    "error_password_too_short": "Password must be at least 8 characters",
+    "error_invalid_email": "Invalid email address"
   },
   "Register": {
     "title": "Register",

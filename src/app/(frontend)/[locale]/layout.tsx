@@ -1,39 +1,41 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 
-import React from 'react'
+import React from "react";
 
-import { AdminBar } from '@/components/AdminBar'
-import { Footer } from '@/Footer/Component'
-import { Header } from '@/Header/Component'
-import { Providers } from '@/providers'
-import { InitTheme } from '@/providers/Theme/InitTheme'
-import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
-import { draftMode } from 'next/headers'
-import './globals.css'
+import { AdminBar } from "@/components/AdminBar";
+import { Footer } from "@/Footer/Component";
+import { Header } from "@/Header/Component";
+import { Providers } from "@/providers";
+import { InitTheme } from "@/providers/Theme/InitTheme";
+import { mergeOpenGraph } from "@/utilities/mergeOpenGraph";
+import { draftMode } from "next/headers";
+import "./globals.css";
 
-import { getServerSideURL } from '@/utilities/getURL'
-import localization from '@/i18n/locatization'
-import { getMessages, setRequestLocale } from 'next-intl/server'
-import { notFound } from 'next/navigation'
-import { routing } from '@/i18n/routing'
-import { TypedLocale } from 'payload'
+import { getServerSideURL } from "@/utilities/getURL";
+import localization from "@/i18n/locatization";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { TypedLocale } from "payload";
 
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { isEnabled } = await draftMode();
 
-
-
-
-export default async function RootLayout({ children, params }: { children: React.ReactNode, params: Promise<{ locale: string }> }) {
-  const { isEnabled } = await draftMode()
-
-  const {locale} = await params;
-  const currentLocale = localization.locales.find((loc) => loc.code === locale)
+  const { locale } = await params;
+  const currentLocale = localization.locales.find((loc) => loc.code === locale);
 
   if (!routing.locales.includes(locale as any)) {
-    notFound()
+    notFound();
   }
 
-  setRequestLocale(locale)
-  const messages = await getMessages()
+  setRequestLocale(locale);
+  const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -51,19 +53,19 @@ export default async function RootLayout({ children, params }: { children: React
           /> */}
 
           <Header locale={locale as TypedLocale} />
-            {children}
+          {children}
           <Footer locale={locale as TypedLocale} />
         </Providers>
       </body>
     </html>
-  )
+  );
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL(getServerSideURL()),
   openGraph: mergeOpenGraph(),
   twitter: {
-    card: 'summary_large_image',
-    creator: '@payloadcms',
+    card: "summary_large_image",
+    creator: "@payloadcms",
   },
-}
+};
